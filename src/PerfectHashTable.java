@@ -7,24 +7,21 @@ import java.util.HashMap;
 public class PerfectHashTable {
 
     public static void main(String[] args) {
-        int[] inputArray = {3,4,5,6,4,7,8,9,9,9,7,7,8,9,7,8,7,9};
+        int[][] inputArray = {{1,7},{56,42},{89,44},{76,45},{34,43},{65,48}, {47,72}};
         int m = 10;
-//        LinkedChainHashFunction linkedChainHashFunction = new LinkedChainHashFunction(m);
+        LinkedChainHashFunction linkedChainHashFunction = new LinkedChainHashFunction(m);
          ArrayList<Couple> hashMap = new ArrayList<>();
         for(int i = 0; i <= m;i++){
             hashMap.add(new Couple(i));
         }
-//        for(int i = 0; i <= inputArray.length - 1 ; i++){
-//            hashMap.get(linkedChainHashFunction.hash(inputArray[i])).arrayList.add(inputArray[i]);
-//        }
-//        System.out.println(hashMap.get(9).arrayList.get(0));
-//        System.out.println(hashMap.get(7).arrayList.get(0));
-//        System.out.println(hashMap.get(7).arrayList.get(1));
-//        System.out.println(hashMap.get(8).arrayList.get(0));
-//        System.out.println(PerfectHashFunction.generatePrimeNumber(10,100));
+        for(int i = 0; i <= inputArray.length - 1 ; i++){
+            hashMap.get(linkedChainHashFunction.hash(inputArray[i][0])).arrayList.add(inputArray[i]);
+        }
+        System.out.println(hashMap.get(6).arrayList.get(0)[1]);
+        System.out.println(PerfectHashFunction.generatePrimeNumber(10,100));
 
-        PerfectHashFunction perfectHashFunction1 = new PerfectHashFunction(m);
-        perfectHashFunction1.generateParameters();
+//        PerfectHashFunction perfectHashFunction1 = new PerfectHashFunction(m);
+//        perfectHashFunction1.generateParameters();
 
     }
 }
