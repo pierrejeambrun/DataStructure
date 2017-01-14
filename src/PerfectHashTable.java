@@ -15,7 +15,7 @@ public class PerfectHashTable {
             hashMap.add(new Couple(i));
         }
 //        for(int i = 0; i <= inputArray.length - 1 ; i++){
-//            hashMap.get(linkedChainHashFunction.hash(i)).arrayList.add(inputArray[i]);
+//            hashMap.get(linkedChainHashFunction.hash(inputArray[i])).arrayList.add(inputArray[i]);
 //        }
 //        System.out.println(hashMap.get(9).arrayList.get(0));
 //        System.out.println(hashMap.get(7).arrayList.get(0));
