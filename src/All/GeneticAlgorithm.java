@@ -1,3 +1,5 @@
+package All;
+
 import org.omg.CORBA.INTERNAL;
 
 /**

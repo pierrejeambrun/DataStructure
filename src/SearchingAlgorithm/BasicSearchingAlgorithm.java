@@ -2,13 +2,10 @@ package SearchingAlgorithm;
 
 import java.util.*;
 
-/**
- * Created by Pierre on 17/01/2017.
- */
 public class BasicSearchingAlgorithm {
     public static void main(String[] args) {
         int[] myArray = {1, 2, 3, 4, 5, 6, 7, 8};
-
+        System.out.println(linearSearch(myArray,3));
     }
 
     public static int linearSearch(int[] myData, int valueToFind) {
