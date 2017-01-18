@@ -1,3 +1,5 @@
+package SortingAlgorithm;
+
 public class QuickSort {
     public static void main(String[] args){
         int[] myArray = {10,256,3,54,67,89,68};
@@ -23,12 +25,12 @@ public class QuickSort {
         int p = start;
         int pivot = myArray[end];
         for(int i = start ; i < end; i++){
-         if(pivot < myArray[i]){
-             int transition  = myArray[i];
-             myArray[i] = myArray[p];
-             myArray[p] = transition;
-             p++;
-         }
+            if(pivot < myArray[i]){
+                int transition  = myArray[i];
+                myArray[i] = myArray[p];
+                myArray[p] = transition;
+                p++;
+            }
         }
         int transition  = myArray[p];
         myArray[p] = myArray[end];
@@ -36,3 +38,4 @@ public class QuickSort {
         return p;
     }
 }
+
