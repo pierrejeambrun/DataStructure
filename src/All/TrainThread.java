@@ -2,9 +2,6 @@ package All;
 
 import sun.misc.Lock;
 
-/**
- * Created by pierre on 01/02/17.
- */
 public class TrainThread {
     int count;
 
@@ -12,6 +9,7 @@ public class TrainThread {
         Lock lock = new Lock();
         TrainThread trainThread1 = new TrainThread();
         TrainThread trainThread2 = new TrainThread();
+
         Runnable runnableLock = () -> {
             int i = 0;
             while (i < 10000) {
@@ -25,7 +23,7 @@ public class TrainThread {
                 lock.unlock();
             }
         };
-        Runnable runnableSynchronizedMethod = () -> trainThread2.count();
+        Runnable runnableSynchronizedMethod = trainThread2::count;
         for (int i = 0; i < 10; i++) {
             Thread thread1 = new Thread(runnableLock);
             Thread thread2 = new Thread(runnableLock);
