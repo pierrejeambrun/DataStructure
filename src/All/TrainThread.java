@@ -2,10 +2,13 @@ package All;
 
 import sun.misc.Lock;
 
+import java.util.ArrayList;
+
 public class TrainThread {
     int count;
 
     public static void main(String[] args) {
+        ArrayList<Integer> test = new ArrayList<>();
         Lock lock = new Lock();
         TrainThread trainThread1 = new TrainThread();
         TrainThread trainThread2 = new TrainThread();

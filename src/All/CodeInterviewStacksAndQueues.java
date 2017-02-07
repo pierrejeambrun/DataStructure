@@ -1,24 +1,13 @@
 package All;
 
-import sun.awt.image.IntegerInterleavedRaster;
-
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Stack;
 
 public class CodeInterviewStacksAndQueues {
-    public static void main(String[] args) {
-        MinStack minQueue = new MinStack();
-        System.out.println(minQueue.min);
-        minQueue.push(2);
-        System.out.println(minQueue.min());
-        minQueue.peek();
-        minQueue.pop();
-        System.out.println(minQueue.min());
-    }
-
     public static class MinStack {
-        ArrayList<Integer> min;
-        ArrayList<Integer> myArray;
+        public ArrayList<Integer> min;
+        public ArrayList<Integer> myArray;
 
         public MinStack() {
             this.min = new ArrayList<>();
@@ -52,37 +41,80 @@ public class CodeInterviewStacksAndQueues {
     }
 
     public static class SetOfStacks {
-        ArrayList<Stack<Integer>> myArray;
-        int stackLimit;
-        int currentstack = 0;
+        public ArrayList<Stack> myArray;
+        public int stackLimit;
+        public int currentstack = 0;
 
         public SetOfStacks(int stackLimit) {
-            this.myArray = new ArrayList<>();
+            myArray = new ArrayList<>();
             myArray.add(new Stack<>());
             this.stackLimit = stackLimit;
         }
 
         public void push(int i) {
-            if (myArray.get(myArray.size() - 1).size()  < stackLimit) {
+            if (myArray.get(myArray.size() - 1).size() < stackLimit)
                 myArray.get(myArray.size() - 1).push(i);
-            } else {
-                myArray.add(new Stack<>());
-                this.push(i);
-            }
-        }
-        public int pop() {
-            if(currentstack == 0 && myArray.get(myArray.size() - 1).size() == 0)
-                throw new ArrayIndexOutOfBoundsException("You pop too much");
-            if(myArray.get(myArray.size() - 1).size()>0) {
-                 return myArray.get(myArray.size() - 1).pop();
-            }else{
-                myArray.remove(myArray.size()-1);
-              return this.pop();
+            else {
+                myArray.add(new Stack<Objects>());
+                push(i);
             }
         }
 
-        public int peek() {
+        public Object pop() {
+            if (currentstack == 0 && myArray.get(0).size() == 0)
+                throw new ArrayIndexOutOfBoundsException("You pop too much");
+            if (myArray.get(myArray.size() - 1).size() > 0) {
+                return myArray.get(myArray.size() - 1).pop();
+            } else {
+                myArray.remove(myArray.size() - 1);
+                return pop();
+            }
+        }
+
+        public Object peek() {
             return myArray.get(myArray.size() - 1).peek();
         }
+    }
+
+    public static class MyQueue<T> {
+        public Stack<T> stack1;
+        public Stack<T> stack2;
+
+        public MyQueue() {
+            stack1 = new Stack<>();
+            stack2 = new Stack<T>();
+        }
+
+        public void push(T object) {
+            stack1.push(object);
+        }
+
+        public T pop() {
+            if (!stack2.isEmpty())
+                return stack2.pop();
+            while (!stack1.isEmpty())
+                stack2.push(stack1.pop());
+            return stack2.pop();
+        }
+
+        public T peek() {
+            if (!stack2.isEmpty())
+                return stack2.peek();
+            while (!stack1.isEmpty())
+                stack2.push(stack1.pop());
+            return stack2.peek();
+        }
+    }
+
+    // Sort a stack only with the function of the stack push pop peek isEmpty.
+    public Stack<Integer> sortInAscendingOrder(Stack<Integer> s) {
+        Stack<Integer> r = new Stack<>();
+        while (s.size() != 0) {
+            int temp = s.pop();
+            while (!r.isEmpty() && temp > r.peek())
+                s.push(r.pop());
+            r.push(temp);
+        }
+        return r;
     }
 }
