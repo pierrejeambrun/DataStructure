@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/**
- * Created by pierre on 04/02/17.
- */
 public class LambdaTraining {
     public static void main(String[] args) {
         List<Integer> myArray = Arrays.asList(3, 4, 5);

@@ -19,7 +19,6 @@ public class CodeInterviewString {
         myImage[1][1] = 0100;
         codeInterviewString.areAnagrams(a, b);
         codeInterviewString.replaceByPercent(" ab  c d ");
-        Integer.toString(codeInterviewString.rotateImage(myImage)[0][0], 8);
         int[][] myMatrix = new int[2][2];
         myMatrix[0][0] = 1;
         myMatrix[0][1] = 8;

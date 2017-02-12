@@ -82,7 +82,7 @@ public class CodeInterviewStacksAndQueues {
 
         public MyQueue() {
             stack1 = new Stack<>();
-            stack2 = new Stack<T>();
+            stack2 = new Stack<>();
         }
 
         public void push(T object) {

@@ -24,7 +24,7 @@ public class QuickSort {
     public static int split(int[] myArray, int start, int end){
         int p = start;
         int pivot = myArray[end];
-        for(int i = start ; i < end; i++){
+        for(int i = start ; i <= end; i++){
             if(pivot < myArray[i]){
                 int transition  = myArray[i];
                 myArray[i] = myArray[p];
