@@ -1,15 +1,15 @@
-package Test;
+package TestCodeInterview;
 
-import All.CodeInterviewSearchingAndSorting;
+import CodeInterview.SearchingAndSorting;
 import junit.framework.TestCase;
 
-public class TestCodeInterviewSearchingAndSorting extends TestCase {
+public class TestSearchingAndSorting extends TestCase {
 
     public void test_mergeSortedArrays() {
         int[] a = {1, 2, 3, 5, 6, 7, 0, 0, 0};
         int[] b = {1, 8, 9};
-        CodeInterviewSearchingAndSorting codeInterviewSearchingAndSorting = new CodeInterviewSearchingAndSorting();
-        codeInterviewSearchingAndSorting.mergeSortedArrays(a, b, 5);
+        SearchingAndSorting searchingAndSorting = new SearchingAndSorting();
+        searchingAndSorting.mergeSortedArrays(a, b, 5);
         assertEquals(1, a[0]);
         assertEquals(1, a[1]);
         assertEquals(2, a[2]);
@@ -23,23 +23,23 @@ public class TestCodeInterviewSearchingAndSorting extends TestCase {
 
     public void test_sortArrayOfString() {
         String[] myArray = {"toto", "tutu", "ttoo", "oott", "atata", "uutt"};
-        CodeInterviewSearchingAndSorting codeInterviewSearchingAndSorting = new CodeInterviewSearchingAndSorting();
-        codeInterviewSearchingAndSorting.sortArrayOfString(myArray);
+        SearchingAndSorting searchingAndSorting = new SearchingAndSorting();
+        searchingAndSorting.sortArrayOfString(myArray);
         for (String s : myArray)
             System.out.println(s);
     }
 
     public void test_searchWithEmpty_when_word_is_present() {
-        CodeInterviewSearchingAndSorting codeInterviewSearchingAndSorting = new CodeInterviewSearchingAndSorting();
+        SearchingAndSorting searchingAndSorting = new SearchingAndSorting();
         String[] myArray = {"at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""};
-        int ball = codeInterviewSearchingAndSorting.searchWithEmpty(myArray, 0, myArray.length - 1, "ball");
+        int ball = searchingAndSorting.searchWithEmpty(myArray, 0, myArray.length - 1, "ball");
         assertEquals(4, ball);
     }
 
     public void test_searchWithEmpty_when_word_is_not_present() {
-        CodeInterviewSearchingAndSorting codeInterviewSearchingAndSorting = new CodeInterviewSearchingAndSorting();
+        SearchingAndSorting searchingAndSorting = new SearchingAndSorting();
         String[] myArray = {"at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""};
-        int result = codeInterviewSearchingAndSorting.searchWithEmpty(myArray, 0, myArray.length - 1, "tutu");
+        int result = searchingAndSorting.searchWithEmpty(myArray, 0, myArray.length - 1, "tutu");
         assertEquals(-1, result);
     }
 

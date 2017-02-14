@@ -1,8 +1,8 @@
-package All;
+package CodeInterview;
 
 import java.util.Arrays;
 
-public class CodeInterviewSearchingAndSorting {
+public class SearchingAndSorting {
     //    a need to have a buffer long enough at the end of the array.
     public void mergeSortedArrays(int[] a, int[] b, int endofa) {
         int aCursor = a.length - 1;

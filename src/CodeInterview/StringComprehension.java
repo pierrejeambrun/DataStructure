@@ -1,15 +1,14 @@
-package All;
+package CodeInterview;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 
-public class CodeInterviewString {
+public class StringComprehension {
     public static void main(String[] args) {
-        CodeInterviewString codeInterviewString = new CodeInterviewString();
+        StringComprehension stringComprehension = new StringComprehension();
         String u = "trrrioo";
-        codeInterviewString.revertString(u);
-        codeInterviewString.checkIfUniqueChar(u);
-        codeInterviewString.removeDuplicates(u);
+        stringComprehension.revertString(u);
+        stringComprehension.checkIfUniqueChar(u);
+        stringComprehension.removeDuplicates(u);
         String a = "attatu";
         String b = "tttaub";
         byte[][] myImage = new byte[2][2];
@@ -17,15 +16,15 @@ public class CodeInterviewString {
         myImage[0][1] = 0011;
         myImage[1][0] = 0010;
         myImage[1][1] = 0100;
-        codeInterviewString.areAnagrams(a, b);
-        codeInterviewString.replaceByPercent(" ab  c d ");
+        stringComprehension.areAnagrams(a, b);
+        stringComprehension.replaceByPercent(" ab  c d ");
         int[][] myMatrix = new int[2][2];
         myMatrix[0][0] = 1;
         myMatrix[0][1] = 8;
         myMatrix[1][0] = 3;
         myMatrix[1][1] = 0;
-        codeInterviewString.putZeroOnArraysMatrix(myMatrix);
-        System.out.println(codeInterviewString.checkIfisRotationOf("tito", "ttio"));
+        stringComprehension.putZeroOnArraysMatrix(myMatrix);
+        System.out.println(stringComprehension.checkIfisRotationOf("tito", "ttio"));
     }
 
     public String revertString(String myStringToRevert) {

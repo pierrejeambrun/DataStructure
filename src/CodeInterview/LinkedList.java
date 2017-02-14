@@ -1,11 +1,11 @@
-package All;
+package CodeInterview;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class CodeInterviewLinkedList {
+public class LinkedList {
     public static void main(String[] args) {
-        CodeInterviewLinkedList codeInterviewLinkedList = new CodeInterviewLinkedList();
+        LinkedList linkedList = new LinkedList();
         ArrayList<String> myArray = new ArrayList<>();
         myArray.add("a");
         myArray.add("b");
@@ -15,8 +15,8 @@ public class CodeInterviewLinkedList {
         myArray.add("a");
         myArray.add("a");
         myArray.add("a");
-        codeInterviewLinkedList.removeDuplicateNoBuffer(myArray);
-        codeInterviewLinkedList.getTheNLastElement(null, 1);
+        linkedList.removeDuplicateNoBuffer(myArray);
+        linkedList.getTheNLastElement(null, 1);
     }
 
     // If we cannot use a buffer we can use two pointers, one if the current node you want to search

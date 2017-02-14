@@ -1,21 +1,21 @@
-package All;
+package CodeInterview;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Queue;
 
-public class CodeInterviewRecursion {
+public class Recursion {
     private int choiceCount;
 
     public static void main(String[] args) {
-        CodeInterviewRecursion codeInterviewRecursion = new CodeInterviewRecursion();
+        Recursion recursion = new Recursion();
         ArrayList<Integer> forbiddenSquares = new ArrayList<>();
         forbiddenSquares.add(3);
         forbiddenSquares.add(5);
-        System.out.println(codeInterviewRecursion.countPath(3, 1, 1, forbiddenSquares));
+        System.out.println(recursion.countPath(3, 1, 1, forbiddenSquares));
         ArrayList<Integer> myArray = new ArrayList<>(Arrays.asList(3, 2, 6));
-        ArrayList<ArrayList<Integer>> subsets = codeInterviewRecursion.getSubsets(myArray, 0);
+        ArrayList<ArrayList<Integer>> subsets = recursion.getSubsets(myArray, 0);
         System.out.println(subsets.size());
         printPar(8);
         Color[][] image = new Color[][]{{Color.Black, Color.Yellow}, {Color.Yellow, Color.Yellow}};

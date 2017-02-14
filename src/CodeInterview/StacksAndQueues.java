@@ -1,10 +1,10 @@
-package All;
+package CodeInterview;
 
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Stack;
 
-public class CodeInterviewStacksAndQueues {
+public class StacksAndQueues {
     public static class MinStack {
         public ArrayList<Integer> min;
         public ArrayList<Integer> myArray;
